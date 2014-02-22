@@ -1,4 +1,5 @@
 SSTaskTracker::Application.routes.draw do
+  
 get "projects/for/:id" => "projects#get_projects"
 
   resources :projects
