@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSTaskTracking</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="app/styles/main.css">
+
+        <script src="app/scripts/vendor/modernizr.js"></script>
+  
+         <script src="app/scripts/vendor.js"></script>
+    
+
+        <script src="app/scripts/main.js"></script>
+		
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
