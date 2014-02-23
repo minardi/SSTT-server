@@ -16,6 +16,7 @@ $(function() {
             // 'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
         }
     });
+
       user = new app.User.ModelView({
         el: $('.user')
     });
@@ -32,7 +33,6 @@ $(function() {
 	var sprint_backlog_stories = new app.SprintBacklogStories.CollectionView({
            el: $(".content")
           });
-		
 
     
 });
@@ -199,6 +199,7 @@ return __p
 (function(module) {
 
         module.ModelView = Backbone.View.extend({
+
 		
 	            model: module.Model,
                 tagName: "li",
@@ -262,6 +263,7 @@ return __p
                         var story = new module.ModelView({
                                 model: StoryModel
                         });
+
                         this.$el.find(".backlog-box ul").append(story.render().el);
                 }
 
