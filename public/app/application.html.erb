@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSTaskTracking</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="app/styles/main.css">
+
+        <script src="app/scripts/vendor/modernizr.js"></script>
+  
+         <script src="app/scripts/vendor.js"></script>
+    
+
+        <!-- build:js({.tmp,app}) app/scripts/main.js -->
+        <script src="app/scripts/main.js"></script>                                             
+
+     
+        <!-- module ProductBacklogStories
+		<script src="app/scripts/templates.js"></script>   
+		
+        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesModel.js"></script>
+        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesCollection.js"></script>
+        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesModelView.js"></script>
+        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesCollectionView.js"></script>
+        
+        <!-- module Projects
+        <script src="app/scripts/Projects/ProjectsModel.js"></script>
+        <script src="app/scripts/Projects/ProjectsCollection.js"></script>
+        <script src="app/scripts/Projects/ProjectsModelView.js"></script>
+        <script src="app/scripts/Projects/ProjectsCollectionView.js"></script>
+
+        <!-- module User
+            
+        <script src="app/scripts/User/UserModel.js"></script>        
+        <script src="app/scripts/User/UserModelView.js"></script> 
+         
+        <!-- module SprintBacklogStories
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModel.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollection.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModelView.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollectionView.js"></script>
+         
+        <!-- module SprintBacklogStories
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModel.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollection.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModelView.js"></script>
+        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollectionView.js"></script>
+         
+        <!-- endbuild -->
+        
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
