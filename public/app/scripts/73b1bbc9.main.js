@@ -17,7 +17,7 @@ $(function() {
         }
     });
 
-      user = new app.User.ModelView({
+    user = new app.User.ModelView({
         el: $('.user')
     });
 	
@@ -26,13 +26,13 @@ $(function() {
         var my_project = new app.Projects.CollectionView({
                             el: $(".content")})});
 
-	var product_backlog_stories = new app.ProductBacklogStories.CollectionView({
-           el: $(".content")
-          });
+    var product_backlog_stories = new app.ProductBacklogStories.CollectionView({
+          el: $(".content")
+        }),
  
-	var sprint_backlog_stories = new app.SprintBacklogStories.CollectionView({
-           el: $(".content")
-          });
+	sprint_backlog_stories = new app.SprintBacklogStories.CollectionView({
+          el: $(".content")
+        });
 
     
 });
@@ -84,11 +84,21 @@ __p += '<p class="name"> Title ' +
 return __p
 };
 
+this["JST"]["app/scripts/ScrumPage/ScrumPageTpl.ejs"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '\t<div class = "container">\n\t\t\t\t<div class = "row">\t\t\t\t\t\n\t\t\t\t\t<div class = "col-md-12">\n\t\t\t\t\t\t<div id = "mypanel" class = "panel panel-primary">\n\t\t\t\t\t\t\t<ul class = "nav nav-tabs nav-justified">\n\t\t\t\t\t\t\t\t<li id = "planning"><a href = "">Planning</a></li>\n\t\t\t\t\t\t\t\t<li id = "scrumboard"><a href = "">Scrum Board</a></li>\n\t\t\t\t\t\t\t\t<li id = "stat"><a href = "">Statistics</a></li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>';
+
+}
+return __p
+};
+
 this["JST"]["app/scripts/SprintBacklogStories/SprintBacklogStoriesCollectionTpl.ejs"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="sprint backlog-box">\n\t<div class="backlog-box-name"> SprintBacklog\n\t  <div class="backlog-box-actions">\n\t    <span class="btn glyphicon glyphicon-play btn-sm">\n\t\t</span>\n\t  </div>\n\t</div>\n\t<table>\n\t\n\t</table>\n</div>';
+__p += '<div class="sprint backlog-box">\r\n\t<div class="backlog-box-name"> SprintBacklog\r\n\t  <div class="backlog-box-actions">\r\n\t    <span class="btn glyphicon glyphicon-play btn-sm">\r\n\t\t</span>\r\n\t  </div>\r\n\t</div>\r\n\t<table>\r\n\t\r\n\t</table>\r\n</div>';
 
 }
 return __p
@@ -100,9 +110,9 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<td>' +
 ((__t = ( model.title )) == null ? '' : __t) +
-'</td>\n<td>' +
+'</td>\r\n<td>' +
 ((__t = ( model.owner )) == null ? '' : __t) +
-'</td>\n';
+'</td>\r\n';
 
 }
 return __p
@@ -549,3 +559,64 @@ return __p
 
 })(app.SprintBacklogStories);
 
+
+/* ScrumPage */
+
+(function(module) {
+        
+	module.Model = Backbone.Model.extend({	     
+		 
+		 defaults: {
+         }		 
+		 
+	});
+
+})(app.ScrumPage);
+
+/* ScrumPage */
+
+(function(module) {
+        
+	module.ModelView = Backbone.View.extend({	     
+		
+    template: JST['app/scripts/ScrumPage/ScrumPageTpl.ejs'],        
+ 		
+	//template: _.template($('#scrum-board').html()),
+	
+	initialize: function() {
+		this.render();
+		this.showPlan();
+	},
+	
+	events: {
+		'click #planning': 'showPlan',
+		'click #scrumboard': 'showScrum',
+		'click #stat': 'showStat'
+	},
+	
+	subscriptions: {
+		//'some_channel': 'render';
+	},
+	
+	render: function() {
+		this.$el.html(this.template());
+		return this;
+	},
+	
+	showPlan: function() {
+		var ProductBacklogStory = new app.ProductBacklogStory.CollectionView({el: $(".content")});
+		var SprintBacklogStory = new app.SprintBacklogStory.CollectionView({el: $(".content")});
+		Backbone.Mediator.publish('ScrumPage:PlanBoardSelected', $('#tab-plan'));
+	},
+	
+	showScrum: function() {
+		Backbone.Mediator.publish('ScrumPage:ScrumBoardSelected', $('#tab-scrum'));
+	},
+	
+	showStat: function() {
+		Backbone.Mediator.publish('ScrumPage:StatBoardSelected', $('#tab-stat'));
+	}
+		 
+	});
+
+})(app.ScrumPage);
