@@ -69,8 +69,6 @@ class ProjectsController < ApplicationController
         if team_member.role == 'watcher'
           @proj_id = team_member.team.project_id
           @proj.push(Project.find(params[:id] = @proj_id))
-          
-         # @proj.push(Project.find(params[:id]))
         end
       end
   end
