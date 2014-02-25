@@ -1,4 +1,20 @@
 SSTaskTracker::Application.routes.draw do
+  
+get "projects/for/:id" => "projects#get_projects"
+
+get "projects/:id/stories" => "stories#index"
+
+  resources :projects
+
+  resources :teams
+
+  resources :team_members
+
+  resources :users
+  
+  resources :stories
+
+
   get "app/main"
   
   root 'app#main'
