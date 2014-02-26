@@ -1,59 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SSTaskTracking</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <title>SSTaskTracking</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+    <script>
+        <% if user_signed_in? %>
+            var current_user_content = {
+                id: <%= current_user.id %>,
+                first_name: "<%= current_user.first_name %>",
+                last_name: "<%= current_user.last_name%>"
+            };
+        <% end %>
+    </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="app/styles/7234d6ea.main.css">
+        <link rel="stylesheet" href="app/styles/e442a8c2.main.css">
 
         <script src="app/scripts/vendor/81b1549c.modernizr.js"></script>
   
          <script src="app/scripts/7926a628.vendor.js"></script>
     
+        <script src="app/scripts/4651ed9b.main.js"></script>
 
-        <!-- build:js({.tmp,app}) app/scripts/main.js -->
-
-        <script src="app/scripts/aedf6741.main.js"></script>
-        <script src="app/scripts/templates.js"></script>
-
-        <!-- module User -->
-        <script src="app/scripts/User/UserModel.js"></script>
-        <script src="app/scripts/User/UserModelView.js"></script>
-
-        <!-- module Projects-->
-        <script src="app/scripts/Projects/ProjectsModel.js"></script>
-        <script src="app/scripts/Projects/ProjectsCollection.js"></script>
-        <script src="app/scripts/Projects/ProjectsModelView.js"></script>
-        <script src="app/scripts/Projects/ProjectsCollectionView.js"></script>
-
-        <!-- module ProductBacklogStories-->
-        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesModel.js"></script>
-        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesCollection.js"></script>
-        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesModelView.js"></script>
-        <script src="app/scripts/ProductBacklogStories/ProductBacklogStoriesCollectionView.js"></script>
-         
-        <!-- module SprintBacklogStories -->
-        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModel.js"></script>
-        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollection.js"></script>
-        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesModelView.js"></script>
-        <script src="app/scripts/SprintBacklogStories/SprintBacklogStoriesCollectionView.js"></script>
-
-        <!-- module ScrumPage-->
-        <script src="app/scripts/ScrumPage/ScrumPageModel.js"></script>
-        <script src="app/scripts/ScrumPage/ScrumPageModelView.js"></script>
-
-        <!-- module Projectinfo-->
-        <script src="app/scripts/Projectinfo/ProjectinfoModel.js"></script>
-        <script src="app/scripts/Projectinfo/ProjectinfoModelView.js"></script>
-         
-        <!-- module DashBoard-->
-        <script src="app/scripts/DashBoard/DashBoardModel.js"></script>
-        <script src="app/scripts/DashBoard/DashBoardModelView.js"></script>
-         
-        <!-- endbuild -->
         
 
 </head>

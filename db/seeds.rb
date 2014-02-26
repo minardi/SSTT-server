@@ -102,3 +102,36 @@ stories = Story.create([
 	:project_id => "1",
 	:sprint_id => "1"
   }])
+
+tasks = Task.create([
+	{
+		title: 'First task',
+		description: 'task for 1 story',
+		story_id: 1,        
+        status: 'todo'
+	},
+	{
+		title: 'Second task',
+		description: 'task for 1 story',
+		story_id: 1,       
+        status: 'done'
+	},
+	{
+		title: 'Third task',
+		description: 'task for 1 story',
+		story_id: 1,        
+        status: 'in-progress'
+	},
+	{
+		title: 'Fifth task',
+		description: 'task for 2 story',
+		story_id: 2,        
+        status: 'done'
+    },
+    {
+    	title: 'Sixth task',
+		description: 'task for 3 story',
+		story_id: 3,       
+        status: 'in-progress'  
+    }])
+
