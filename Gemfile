@@ -3,11 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-<<<<<<< HEAD
-=======
+
 gem "devise", "~> 3.0.0.rc"
 
->>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

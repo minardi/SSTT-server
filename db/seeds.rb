@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-<<<<<<< HEAD
-=======
 projects = Project.create([
 	{
 		title: 'car', 
@@ -95,6 +93,3 @@ stories = Story.create([
 	:project_id => "1",
 	:sprint_id => "1"
   }])
-
-
->>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5
