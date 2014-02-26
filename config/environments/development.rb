@@ -22,6 +22,11 @@ SSTaskTracker::Application.configure do
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 
+<<<<<<< HEAD
+=======
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+>>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.

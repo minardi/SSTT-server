@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
+=======
+
+# Ignore public/app
+/public/app
+>>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5

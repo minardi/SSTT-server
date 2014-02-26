@@ -1,4 +1,25 @@
 SSTaskTracker::Application.routes.draw do
+<<<<<<< HEAD
+=======
+  devise_for :users
+  
+ # общий стиль url: projects/for-user/:id
+get "projects/for/:id" => "projects#get_projects"
+
+get "projects/:id/stories" => "stories#index" 
+
+  resources :projects
+
+  resources :teams
+
+  resources :team_members
+
+  resources :users
+  
+  resources :stories
+
+
+>>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5
   get "app/main"
   
   root 'app#main'

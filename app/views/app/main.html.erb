@@ -1,6 +1,65 @@
+<<<<<<< HEAD
 <!--
 <h1>App#main</h1>
 <p>Find me in app/views/app/main.html.erb</p>
 -->
 
 <div id = "in"></div>
+=======
+<!-- может нужно убрать p вывод собщений, они создают дополнительный отступ-->
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+   
+    <div class="app-wrapper">
+        <div class="b-header">
+                <b class="user">
+                    <%= link_to "Sign in", new_user_session_path %> 
+                    <%= link_to "Sign up", new_user_registration_path %> 
+                </b>
+                <span class="btn btn-info glyphicon glyphicon-wrench">
+                </span>
+                <span>
+                    <%= link_to "LogOut", destroy_user_session_path, 
+                        :method => :delete, 
+                        :class => "btn btn-danger glyphicon glyphicon-user" %>
+                </span>
+        </div>
+
+        <div class="b-sidebar">
+            <div class="title">Info</div>
+            <div class="info">
+                <ul class="list-unstyled">
+                    <li>Name:</li>
+                    <li>Description</li>
+                    <li>DateStart:</li>
+                    <li>DateFinal:</li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="b-main">
+            
+        </div>
+    </div>
+
+    <% else %>
+       <%= link_to "Sign up", new_user_registration_path %> or 
+       <%= link_to "sign in", new_user_session_path %>
+
+<%end%>
+
+<script>
+  var users = new Backbone.Collection;
+  users.reset(<%= @users = User.find(params[:id] = 1).to_json %>);
+  // var projects = new Backbone.Collection;
+  // projects.reset(<%= @projects.to_json(:collaborators => true) %>);
+
+  console.log(users);
+</script>
+
+
+>>>>>>> 5a0dae57d9083dc78f44bedd9b512966051751e5

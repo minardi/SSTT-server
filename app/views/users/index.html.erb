@@ -1,0 +1,47 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+    <% @users.each do |user| %>
+       <ul>
+          <li> 
+            name = <%= user.first_name %>;
+            user id = <%= user.id %>
+
+            <% user.team_members.each do |team_member| %>
+            <ul>
+              <li>role = <%= team_member.role %></li>
+              <li>project_id = <%= team_member.team.project_id %></li>
+              <li>project = <%= team_member.team.project.title %></li>
+            </ul>
+            <% end%>
+          </li>
+        </ul>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
