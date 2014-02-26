@@ -1,15 +1,9 @@
-<!-- может нужно убрать p вывод собщений, они создают дополнительный отступ-->
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
 <% if user_signed_in? %>
    
     <div class="app-wrapper">
         <div class="b-header">
                 <b class="user">
-                    <%= link_to "Sign in", new_user_session_path %> 
-                    <%= link_to "Sign up", new_user_registration_path %> 
+                    
                 </b>
                 <span class="btn btn-info glyphicon glyphicon-wrench">
                 </span>
@@ -24,10 +18,10 @@
             <div class="title">Info</div>
             <div class="info">
                 <ul class="list-unstyled">
-                    <li>Name:</li>
-                    <li>Description</li>
+                    <li>Description:</li>
                     <li>DateStart:</li>
-                    <li>DateFinal:</li>
+                    <li>PM:</li>
+                    <li>Role:</li>
                 </ul>
                 
             </div>
