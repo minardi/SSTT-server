@@ -8,15 +8,24 @@
 projects = Project.create([
 	{
 		title: 'car', 
-		description: 'Magazine'
+		description: 'Magazine',
+		start: '10.10.10',
+		finish: '11.11.11',
+		owner: 'A'
 	},
 	{
 		title: 'web', 
-		description: 'WebApp'
+		description: 'WebApp',
+		start: '10.10.10',
+		finish: '12.12.12',
+		owner: 'B'
 	},
 	{
 		title: 'sport', 
-		description: 'Training'
+		description: 'Training',
+		start: '13.13.13',
+		finish: '14.14.14',
+		owner: 'C'
 	}])
 
 users = User.create([
