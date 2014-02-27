@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SSTaskTracking</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <title>SSTaskTracking</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+    <script>
+        <% if user_signed_in? %>
+            var current_user_content = {
+                id: <%= current_user.id %>,
+                first_name: "<%= current_user.first_name %>",
+                last_name: "<%= current_user.last_name%>"
+            };
+        <% end %>
+    </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="app/styles/7234d6ea.main.css">
@@ -14,7 +24,7 @@
          <script src="app/scripts/284cd242.vendor.js"></script>
     
 
-        <script src="app/scripts/18363861.main.js"></script>
+        <script src="app/scripts/3d15ca8f.main.js"></script>
         
 
 </head>
