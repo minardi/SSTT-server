@@ -1,12 +1,17 @@
 SSTaskTracker::Application.routes.draw do
 
+  
+
   devise_for :users
   
  # общий стиль url: projects/for-user/:id
+ resources :tasks
+get 'tasks/for-project/:id' => 'tasks#get_tasks'
+ 
 get "projects/for-user/:id" => "projects#get_projects"
 
 get "stories/for-projects/:id" => "stories#index" 
-
+  resources :tasks
   resources :projects
 
   resources :teams
