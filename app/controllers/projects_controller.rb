@@ -66,9 +66,21 @@ class ProjectsController < ApplicationController
 
       @proj = []
       @projects = @user.team_members.each do |team_member| 
-        if team_member.role == 'watcher'
+       if team_member.role != 'null'
           @proj_id = team_member.team.project_id
-          @proj.push(Project.find(params[:id] = @proj_id))
+          @project = Project.find(params[:id] = @proj_id)
+
+          @project_new = {
+            :id =>  @project.id,
+            :title => @project.title,
+            :description => @project.description,
+            :owner => @project.owner,
+            :start => @project.start,
+            :finish => @project.finish,
+            :role => team_member.role
+           #:pm => Project.f
+          }
+          @proj.push(@project_new)
         end
       end
   end
