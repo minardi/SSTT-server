@@ -11,21 +11,32 @@ projects = Project.create([
 		description: 'Magazine',
 		start: '10.10.10',
 		finish: '11.11.11',
-		owner: 'A'
+		owner: 'A',
+		pm: '1'
 	},
 	{
 		title: 'web', 
 		description: 'WebApp',
 		start: '10.10.10',
 		finish: '12.12.12',
-		owner: 'B'
+		owner: 'B',
+		pm: '2'
 	},
 	{
 		title: 'sport', 
 		description: 'Training',
 		start: '13.13.13',
 		finish: '14.14.14',
-		owner: 'C'
+		owner: 'C',
+		pm: '2'
+	},
+	{
+		title: 'TaskManager', 
+		description: 'Task Manager SoftServe',
+		start: '10.02.14',
+		finish: '10.03.14',
+		owner: 'B',
+		pm: '1'
 	}])
 
 users = User.create([
@@ -35,6 +46,13 @@ users = User.create([
 		email: 'enzoferrary@i.ua',
 		password: '12345678',
 		password_confirmation: '12345678'
+	},
+	{
+		first_name: 'Name', 
+		last_name: 'Surname',
+		email: 'surname@mail.ru',
+		password: '11111111',
+		password_confirmation: '11111111'
 	}])
 	# {
 	# 	first_name: 'new_user', 
@@ -51,9 +69,11 @@ teams = Team.create([
 	{
 		project_id: 2
 	},
-
 	{
 		project_id: 3
+	},
+	{
+	    project_id: 4
 	}])
 
 team_member = TeamMember.create([
@@ -70,6 +90,11 @@ team_member = TeamMember.create([
 	{
 		user_id: 1,
 		team_id: 3,
+		role: 'dev'
+	},
+	{
+		user_id: 2,
+		team_id: 4,
 		role: 'dev'
 	}])
 	
