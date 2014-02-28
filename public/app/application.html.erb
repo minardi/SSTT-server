@@ -17,15 +17,15 @@
     </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="app/styles/90f0d62f.main.css">
+    <% if user_signed_in? %>
+        <link rel="stylesheet" href="app/styles/c828a93a.main.css">
 
         <script src="app/scripts/vendor/81b1549c.modernizr.js"></script>
   
          <script src="app/scripts/7926a628.vendor.js"></script>
     
-
-        <script src="app/scripts/165a667e.main.js"></script>
-        
+        <script src="app/scripts/ec28cd85.main.js"></script>
+    <% end %>
 
 </head>
 <body>
