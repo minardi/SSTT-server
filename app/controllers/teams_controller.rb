@@ -61,10 +61,9 @@ class TeamsController < ApplicationController
     end
   end
 
-  def get_teams 
+  def get_teams
     @project =  Project.find(params[:id])
     @teams = @project.teams.all(:conditions => ["project_id"]) 
-    return @teams
   end
 
   private
