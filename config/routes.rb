@@ -10,7 +10,7 @@ get 'tasks/for-project/:id' => 'tasks#get_tasks'
  
 get "projects/for-user/:id" => "projects#get_projects"
 
-get "teams/for-projects/:id" => "teams#get_teams"
+get "teams/for-project/:id" => "teams#get_teams"
 
 get "stories/for-projects/:id" => "stories#index" 
   resources :tasks
