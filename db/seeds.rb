@@ -134,7 +134,7 @@ stories = Story.create([
 	:sprint_id => "1"
   },
   {
-    :title => "Project1.Productstory2",
+    :title => 'Project1.Productstory2',
     :description => "beatiful",
 	:status => "Product",
 	:project_id => "1",

@@ -9,23 +9,46 @@ class UsersController < ApplicationController
   end
 
   def get_all
-    @project = Project.find(params[:id])
     # user each 
     # if  user.team_member.team_id = 
+    @team = Team.find(params[:id])
     @users = []
-    @users_candidate = @project.teams.first.team_members.each do |team_member| 
-      @user_id = team_member.user_id
-      @user = User.find(params[:id] = @user_id)
-
-      @user_new = {
-        :id =>  @user.id,
-        :first_name => @user.first_name,
-        :last_name => @user.last_name,
-        :role =>  team_member.role
-        }
-      @users.push(@user_new)
+    User.all.each do |user_new|
+      @users_candidate = @team.team_members.each do |team_member| 
+        if user_new.id == team_member.user_id
+          @user_current = {
+            :id =>  user_new.id,
+            :first_name => user_new.first_name,
+            :last_name => user_new.last_name,
+            :role =>  team_member.role
+          }
+          $us = @user_current
+        end
+        @users.push(@us)
+      end
     end
   end
+
+
+ # def get_all
+  #  @project = Project.find(params[:id])
+    # user each 
+    # if  user.team_member.team_id = 
+  #  @users = []
+  #  @users_candidate = @project.teams.first.team_members.each do |team_member| 
+  #   @user_id = team_member.user_id
+  #    @user = User.find(params[:id] = @user_id)
+
+  #    @user_new = {
+  #      :id =>  @user.id,
+  #      :first_name => @user.first_name,
+  #      :last_name => @user.last_name,
+  #      :role =>  team_member.role
+  #      }
+  #    @users.push(@user_new)
+  #  end
+  #end
+
 
   # GET /users/1
   # GET /users/1.json
