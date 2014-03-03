@@ -94,7 +94,7 @@ team_member = TeamMember.create([
 	},
 	{
 		user_id: 2,
-		team_id: 4,
+		team_id: 3,
 		role: 'dev'
 	}])
 	

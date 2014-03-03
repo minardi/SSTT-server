@@ -8,6 +8,25 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def get_all
+    @project = Project.find(params[:id])
+    # user each 
+    # if  user.team_member.team_id = 
+    @users = []
+    @users_candidate = @project.teams.first.team_members.each do |team_member| 
+      @user_id = team_member.user_id
+      @user = User.find(params[:id] = @user_id)
+
+      @user_new = {
+        :id =>  @user.id,
+        :first_name => @user.first_name,
+        :last_name => @user.last_name,
+        :role =>  team_member.role
+        }
+      @users.push(@user_new)
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

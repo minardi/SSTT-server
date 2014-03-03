@@ -11,7 +11,6 @@ class StoriesController < ApplicationController
   def get_stories
 	@project =  Project.find(params[:id])
   @stories = @project.stories.all(:conditions => ["status='Product'"]) 
-  return @stories
   end
 
   # GET /stories/1
