@@ -11,15 +11,13 @@
   </thead>
 
   <tbody>
-    <% @team.each do |team| %>
+    <% @teams.each do |team| %>
       <tr>
         <td><%= team.id %></td>
         <td><%= team.title %></td>
         <td><%= team.description %></td>
         <td><%= team.project_id %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
       </tr>
     <% end %>
   </tbody>
