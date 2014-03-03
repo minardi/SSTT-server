@@ -64,15 +64,28 @@ users = User.create([
 
 teams = Team.create([
 	{
+		title: 'team1', 
+		description: 'some',
 		project_id: 1
 	},
 	{
+		title: 'team5', 
+		description: 'some',
+		project_id: 1
+	},
+	{
+		title: 'team2', 
+		description: 'some',
 		project_id: 2
 	},
 	{
+		title: 'team3', 
+		description: 'some',
 		project_id: 3
 	},
 	{
+		title: 'team4', 
+		description: 'some',
 	    project_id: 4
 	}])
 
