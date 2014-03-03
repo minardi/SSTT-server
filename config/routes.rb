@@ -9,6 +9,8 @@ get 'tasks/for-project/:id' => 'tasks#get_tasks'
  
 get "projects/for-user/:id" => "projects#get_projects"
 
+get "teams/for-projects/:id" => "teams#get_teams"
+
 get "stories/for-projects/:id" => "stories#index" 
 
 get "users/for-project/:id" => "users#get_all" 
