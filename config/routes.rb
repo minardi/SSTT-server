@@ -1,37 +1,30 @@
 SSTaskTracker::Application.routes.draw do
 
-  
+devise_for :users
 
-  devise_for :users
-  
- resources :tasks
 get 'tasks/for-project/:id' => 'tasks#get_tasks'
  
 get "projects/for-user/:id" => "projects#get_projects"
 
+get "stories/for-project/:id" => "stories#index" 
+
+get "users/for-project/:id" => "users#get_all", as: :user
+
 get "teams/for-project/:id" => "teams#get_teams"
 
-get "stories/for-projects/:id" => "stories#index" 
+ resources :projects
 
-get "users/for-project/:id" => "users#get_all" 
+ resources :stories
 
+ resources :teams
 
-  resources :tasks
+ resources :tasks
 
-  resources :projects
+ resources :team_members
 
-  resources :teams
-
-  resources :team_members
-
-  resources :users
+get "app/main"
   
-  resources :stories
-
-
-  get "app/main"
-  
-  root 'app#main'
+root 'app#main'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

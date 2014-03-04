@@ -17,13 +17,13 @@ class UsersController < ApplicationController
 #     if @team.team_members.find_by_id(user.id).users > 0
 #        $role = @team.team_members.find_by_id(user.id).role
 #      end
-      @user_current = {
+      @user_c = {
         :id =>  user.id,
         :first_name => user.first_name,
         :last_name => user.last_name,
-        :role =>  ""   
+        :role =>  ""  
       }
-      @users.push(@user_current)
+      @users.push(@user_c)
     end
   end
 
