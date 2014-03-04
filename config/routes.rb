@@ -12,7 +12,7 @@ get "projects/for-user/:id" => "projects#get_projects"
 
 get "teams/for-project/:id" => "teams#get_teams"
 
-get "stories/for-projects/:id" => "stories#index" 
+get "stories/for-project/:id" => "stories#index" 
   resources :tasks
   resources :projects
 

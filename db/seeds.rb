@@ -102,6 +102,11 @@ team_member = TeamMember.create([
 	},
 	{
 		user_id: 1,
+		team_id: 5,
+		role: 'watcher'
+	},
+	{
+		user_id: 1,
 		team_id: 3,
 		role: 'dev'
 	},
