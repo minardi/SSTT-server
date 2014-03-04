@@ -11,12 +11,19 @@ class UsersController < ApplicationController
   def get_all
     @team = Team.find(params[:id])
     @users = []
+    team_ids = @team.team_members.map(&:user_id)
 
-    User.all.each do |user| 
-#     $role = "";
-#     if @team.team_members.find_by_id(user.id).users > 0
-#        $role = @team.team_members.find_by_id(user.id).role
-#      end
+    @team.team_members.each do |team_member|
+      @user_c = {
+        :id =>  team_member.user.id,
+        :first_name => team_member.user.first_name,
+        :last_name => team_member.user.last_name,
+        :role =>  team_member.role 
+      }
+      @users.push(@user_c)
+    end
+
+    User.find(:all, :conditions => ["id not in (?)", team_ids]).each do |user| 
       @user_c = {
         :id =>  user.id,
         :first_name => user.first_name,
@@ -25,32 +32,8 @@ class UsersController < ApplicationController
       }
       @users.push(@user_c)
     end
+
   end
-
-
-   #def get_all
-    # user each 
-    # if  user.team_member.team_id = 
-   # @team = Team.find(params[:id])
-   # @users = []
-
-    #User.all.each do |user| 
-    #  $role = "";
-    #  if @team.team_members.find_by_id(user.id).users > 0
-    #    $role = @team.team_members.find_by_id(user.id).role
-    #  end
-    #  @user_current = {
-    #    :id =>  user.id,
-    #    :first_name => user.first_name,
-    #    :last_name => user.last_name,
-    #    :role =>  $role   
-    #  }
-    #  @users.push(@user_current)
-    #end
-  #end
-
-
- 
 
   # GET /users/1
   # GET /users/1.json
