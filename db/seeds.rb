@@ -69,6 +69,11 @@ teams = Team.create([
 		project_id: 1
 	},
 	{
+		title: 'team5', 
+		description: 'some',
+		project_id: 1
+	},
+	{
 		title: 'team2', 
 		description: 'some',
 		project_id: 2
@@ -82,11 +87,6 @@ teams = Team.create([
 		title: 'team4', 
 		description: 'some',
 	    project_id: 4
-	 },
-	 {
-		title: 'team5', 
-		description: 'some',
-		project_id: 1
 	}])
 
 team_member = TeamMember.create([
@@ -119,6 +119,11 @@ team_member = TeamMember.create([
 		user_id: 3,
 		team_id: 3,
 		role: 'dev'
+	},
+	{
+		user_id: 3,
+		team_id: 5,
+		role: 'dev'	
 	}])
 	
 stories = Story.create([
