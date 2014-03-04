@@ -9,46 +9,48 @@ class UsersController < ApplicationController
   end
 
   def get_all
-    # user each 
-    # if  user.team_member.team_id = 
     @team = Team.find(params[:id])
     @users = []
-    User.all.each do |user|
-      @team.team_members.each do |team_member| 
-        if user.id == team_member.user_id
-          @user_current = {
-            :id =>  user.id,
-            :first_name => user.first_name,
-            :last_name => user.last_name,
-            :role =>  team_member.role
-          }
-          $us = @user_current
-        end
-        @users.push(@us)
-      end
+
+    User.all.each do |user| 
+#     $role = "";
+#     if @team.team_members.find_by_id(user.id).users > 0
+#        $role = @team.team_members.find_by_id(user.id).role
+#      end
+      @user_current = {
+        :id =>  user.id,
+        :first_name => user.first_name,
+        :last_name => user.last_name,
+        :role =>  ""   
+      }
+      @users.push(@user_current)
     end
   end
 
 
- # def get_all
-  #  @project = Project.find(params[:id])
+   #def get_all
     # user each 
     # if  user.team_member.team_id = 
-  #  @users = []
-  #  @users_candidate = @project.teams.first.team_members.each do |team_member| 
-  #   @user_id = team_member.user_id
-  #    @user = User.find(params[:id] = @user_id)
+   # @team = Team.find(params[:id])
+   # @users = []
 
-  #    @user_new = {
-  #      :id =>  @user.id,
-  #      :first_name => @user.first_name,
-  #      :last_name => @user.last_name,
-  #      :role =>  team_member.role
-  #      }
-  #    @users.push(@user_new)
-  #  end
+    #User.all.each do |user| 
+    #  $role = "";
+    #  if @team.team_members.find_by_id(user.id).users > 0
+    #    $role = @team.team_members.find_by_id(user.id).role
+    #  end
+    #  @user_current = {
+    #    :id =>  user.id,
+    #    :first_name => user.first_name,
+    #    :last_name => user.last_name,
+    #    :role =>  $role   
+    #  }
+    #  @users.push(@user_current)
+    #end
   #end
 
+
+ 
 
   # GET /users/1
   # GET /users/1.json

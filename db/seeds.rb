@@ -53,14 +53,14 @@ users = User.create([
 		email: 'surname@mail.ru',
 		password: '11111111',
 		password_confirmation: '11111111'
+	},
+	{
+		first_name: 'Arnold', 
+		last_name: 'Schwarzenegger',
+		email: 'arni@i.ua',
+		password: '1111',
+		password_confirmation: '1111'
 	}])
-	# {
-	# 	first_name: 'new_user', 
-	# 	last_name: 'new_user',
-	# 	email: 'new_user@i.ua',
-	# 	password: '12345678',
-	# 	password_confirmation: '12345678'
-	# }])
 
 teams = Team.create([
 	{
@@ -107,6 +107,11 @@ team_member = TeamMember.create([
 	},
 	{
 		user_id: 2,
+		team_id: 3,
+		role: 'dev'
+	},
+	{
+		user_id: 3,
 		team_id: 3,
 		role: 'dev'
 	}])
