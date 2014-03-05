@@ -35,6 +35,21 @@ class UsersController < ApplicationController
 
   end
 
+ def get_team_members
+    @team = Team.find(params[:id])
+    @users = []
+    
+    @team.team_members.each do |team_member|
+      @user_c = {
+        :id =>  team_member.user.id,
+        :first_name => team_member.user.first_name,
+        :last_name => team_member.user.last_name,
+        :role =>  team_member.role 
+      }
+      @users.push(@user_c)
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
