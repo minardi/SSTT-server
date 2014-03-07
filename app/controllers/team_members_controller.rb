@@ -7,7 +7,7 @@ class TeamMembersController < ApplicationController
     @team_members = TeamMember.all
   end
   
-=begin 
+
   def get_team_members
     @team_members = Team.find(params[:id]).team_members.each do |team_member| 
       @user_id = team_member.user_id
@@ -22,7 +22,7 @@ class TeamMembersController < ApplicationController
       @team_members.push(@user_new)
     end
   end
-  =end
+
 
   # GET /team_members/1
   # GET /team_members/1.json

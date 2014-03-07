@@ -8,7 +8,7 @@ get "projects/for-user/:id" => "projects#get_projects"
 
 get "stories/for-project/:id" => "stories#index" 
 
-get "users/for-project/:id" => "users#get_all", as: :user
+get "users-candidats/for-team/:id" => "users#get_all", as: :user
 
 get "teams/for-project/:id" => "teams#get_teams"
 
