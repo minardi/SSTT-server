@@ -122,22 +122,22 @@ team_member = TeamMember.create([
 	{
 		user_id: 1,
 		team_id: 3,
-		role: 'dev'
+		role: 'developer'
 	},
 	{
 		user_id: 2,
 		team_id: 3,
-		role: 'dev'
+		role: 'developer'
 	},
 	{
 		user_id: 3,
 		team_id: 3,
-		role: 'dev'
+		role: 'developer'
 	},
 	{
 		user_id: 3,
 		team_id: 5,
-		role: 'dev'	
+		role: 'developer'	
 	}])
 	
 stories = Story.create([

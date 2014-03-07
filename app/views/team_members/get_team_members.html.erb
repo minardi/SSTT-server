@@ -15,10 +15,10 @@
   <tbody>
     <% @team_members.each do |team_member| %>
       <tr>
-        <td><%= team_member.user_id %></td>
-        <td><%= team_member.team_id %></td>
-        <td><%= team_member.role %></td>
-        <td><%= team_member.id %></td>
+        <td><%= team_member[:id] %></td>
+        <td><%= team_member[:first_name] %></td>
+        <td><%= team_member[:last_name] %></td>
+        <td><%= team_member[:role] %></td>
 
         <td><%= link_to 'Show', team_member %></td>
         <td><%= link_to 'Edit', edit_team_member_path(team_member) %></td>
@@ -26,25 +26,4 @@
       </tr>
     <% end %>
 
-    <% @team_members.each do |team_member| %>
-       <ul>
-          <li>
-            <% if team_member.role == 'watcher'%> 
-              role = <%= team_member.role %>;
-              user id = <%= team_member.user.id %>;
-              name = <%= team_member.user.first_name %>;
-              team id = <%= team_member.team.id %>
-              project_id = <%= team_member.team.project_id %>;
-              project = <%= team_member.team.project.title %>
-
-              <%end%>
-          </li>
-        </ul>
-    <% end %>   
-
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Team member', new_team_member_path %>
+  
