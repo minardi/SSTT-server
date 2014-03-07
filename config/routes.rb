@@ -12,8 +12,8 @@ get "users/for-project/:id" => "users#get_all", as: :user
 
 get "teams/for-project/:id" => "teams#get_teams"
 
-get "users/for-team/:id" => "users#get_team_members", as: :team_member
-
+get "users/for-team/:id" => "team_members#get_team_members", as: :team_member
+ 
  resources :projects
 
  resources :stories
