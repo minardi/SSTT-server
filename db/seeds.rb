@@ -60,6 +60,20 @@ users = User.create([
 		email: 'arni@i.ua',
 		password: '1111',
 		password_confirmation: '1111'
+	},
+	{
+		first_name: 'Vova', 
+		last_name: 'Levij',
+		email: 'sda@i.ua',
+		password: '1111',
+		password_confirmation: '1111'
+	},
+	{
+		first_name: 'Zora', 
+		last_name: 'Pravij',
+		email: 'sdaaa@i.ua',
+		password: '1111',
+		password_confirmation: '1111'
 	}])
 
 teams = Team.create([
@@ -69,22 +83,22 @@ teams = Team.create([
 		project_id: 1
 	},
 	{
-		title: 'team5', 
+		title: 'team2', 
 		description: 'some',
 		project_id: 1
 	},
 	{
-		title: 'team2', 
+		title: 'team3', 
 		description: 'some',
 		project_id: 2
 	},
 	{
-		title: 'team3', 
+		title: 'team4', 
 		description: 'some',
 		project_id: 3
 	},
 	{
-		title: 'team4', 
+		title: 'team5', 
 		description: 'some',
 	    project_id: 4
 	}])

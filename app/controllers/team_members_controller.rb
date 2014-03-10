@@ -7,22 +7,20 @@ class TeamMembersController < ApplicationController
     @team_members = TeamMember.all
   end
   
-=begin 
   def get_team_members
-    @team_members = Team.find(params[:id]).team_members.each do |team_member| 
-      @user_id = team_member.user_id
-      @user = User.find_by_id(@user_id)
-
-      @user_new = {
-        :id =>  @user.id,
-        :first_name => @user.first_name,
-        :last_name => @user.last_name,
-        :role =>  team_member.role
+    @team = Team.find(params[:id])
+    @team_members = []
+    
+    @team.team_members.each do |team_member|
+      @user_c = {
+        :id =>  team_member.user.id,
+        :first_name => team_member.user.first_name,
+        :last_name => team_member.user.last_name,
+        :role =>  team_member.role 
       }
-      @team_members.push(@user_new)
+      @team_members.push(@user_c)
     end
   end
-  =end
 
   # GET /team_members/1
   # GET /team_members/1.json
