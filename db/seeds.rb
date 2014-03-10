@@ -139,7 +139,7 @@ team_member = TeamMember.create([
 		team_id: 5,
 		role: 'developer'	
 	}])
-	
+
 stories = Story.create([
   {
     :title => "Project1.Sprintstory1",
@@ -201,4 +201,3 @@ tasks = Task.create([
 		story_id: 3,       
         status: 'in-progress'  
     }])
-
