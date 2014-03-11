@@ -1,6 +1,7 @@
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
-
+  #skip_before_filter  :verify_authenticity_token
+  
   # GET /team_members
   # GET /team_members.json
   def index
@@ -13,7 +14,7 @@ class TeamMembersController < ApplicationController
     
     @team.team_members.each do |team_member|
       @user_c = {
-        :id =>  team_member.user.id,
+        :id =>  team_member.id,
         :first_name => team_member.user.first_name,
         :last_name => team_member.user.last_name,
         :role =>  team_member.role 
