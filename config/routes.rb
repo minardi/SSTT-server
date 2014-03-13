@@ -4,15 +4,17 @@ devise_for :users
 
 get 'tasks/for-project/:id' => 'tasks#get_tasks'
  
-get "projects/for-user/:id" => "projects#get_projects"
+get 'projects/for-user/:id' => 'projects#get_projects'
 
-get "stories/for-project/:id" => "stories#index" 
+get 'stories/for-project/:id' => 'stories#index' 
 
-get "users-candidats/for-team/:id" => "users#get_all", as: :user
+get 'users-candidats/for-team/:id' => 'users#get_all', as: :user
 
-get "teams/for-project/:id" => "teams#get_teams"
+get 'teams/for-project/:id' => 'teams#get_teams'
 
-get "users/for-team/:id" => "team_members#get_team_members", as: :team_member
+get 'users/for-team/:id' => 'team_members#get_team_members', as: :team_member
+
+get ':params' => 'app#main'
  
  resources :projects
 
@@ -24,14 +26,14 @@ get "users/for-team/:id" => "team_members#get_team_members", as: :team_member
 
  resources :team_members
 
-get "app/main"
+get 'app/main'
   
 root 'app#main'
   
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:
