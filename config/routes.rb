@@ -14,7 +14,9 @@ SSTaskTracker::Application.routes.draw do
 
   get "teams/for-project/:id" => "teams#get_teams"
 
-  get "users/for-team/:id" => "team_members#get_team_members", as: :team_member
+  get 'users/for-team/:id' => 'team_members#get_team_members', as: :team_member
+
+  get ':params' => 'app#main'
    
   resources :projects
 
@@ -31,9 +33,9 @@ SSTaskTracker::Application.routes.draw do
   root 'app#main'
   
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:
