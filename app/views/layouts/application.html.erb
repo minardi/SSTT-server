@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>SSTaskTracking</title>
+
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -15,6 +16,7 @@
             };
         <% end %>
     </script>
+
     <% if user_signed_in? %>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -23,9 +25,9 @@
 
         <script src="app/scripts/vendor/81b1549c.modernizr.js"></script>
   
-         <script src="app/scripts/857f2174.vendor.js"></script>
+        <script src="app/scripts/bfc35e12.vendor.js"></script>
     
-        <script src="app/scripts/514db22f.main.js"></script>
+        <script src="app/scripts/b3a70dbf.main.js"></script>
     <% end %>
 
 </head>
@@ -34,5 +36,4 @@
 <%= yield %>
 
 </body>
-
 </html>

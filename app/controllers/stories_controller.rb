@@ -13,6 +13,21 @@ class StoriesController < ApplicationController
   @stories = @project.stories.all(:conditions => ["status='Product'"]) 
   end
 
+  def get_stories_for_sprint
+    @project = Project.find(params[:id])           
+    @array_of_stories = []
+            
+    @story = @project.sprints.each do |sprintitem|
+      if sprintitem.status == 'active'
+        sprintitem.stories.each do |storyitem|            
+          @array_of_stories.push(storyitem)
+        end
+      end
+    end
+  end
+
+
+
   # GET /stories/1
   # GET /stories/1.json
   def show

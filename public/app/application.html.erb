@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
     <title>SSTaskTracking</title>
+
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -16,43 +16,7 @@
             };
         <% end %>
     </script>
-    <% if user_signed_in? %>
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    
-        <link rel="stylesheet" href="app/styles/35c087de.main.css">
-
-        <script src="app/scripts/vendor/d7100892.modernizr.js"></script>
-  
-         <script src="app/scripts/7deaa9c0.vendor.js"></script>
-    
-        <script src="app/scripts/42cf21a7.main.js"></script>
-    <% end %>
-
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SSTaskTracking</title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-
-    <script>
-        <% if user_signed_in? %>
-            var current_user_content = {
-                id: <%= current_user.id %>,
-                first_name: "<%= current_user.first_name %>",
-                last_name: "<%= current_user.last_name%>"
-            };
-        <% end %>
-    </script>
     <% if user_signed_in? %>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -61,9 +25,9 @@
 
         <script src="app/scripts/vendor/81b1549c.modernizr.js"></script>
   
-         <script src="app/scripts/857f2174.vendor.js"></script>
+        <script src="app/scripts/bfc35e12.vendor.js"></script>
     
-        <script src="app/scripts/514db22f.main.js"></script>
+        <script src="app/scripts/b3a70dbf.main.js"></script>
     <% end %>
 
 </head>
@@ -72,5 +36,4 @@
 <%= yield %>
 
 </body>
->>>>>>> 05c505260e70504ff340e89ee1e31a3b89323371
 </html>

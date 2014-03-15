@@ -160,14 +160,14 @@ stories = Story.create([
     :description => "beatiful",
     :status => "Product",
     :project_id => "2",
-    :sprint_id => "1"
+    :sprint_id => "3"
   },
   {
     :title => 'Project1.Productstory2',
     :description => "beatiful",
     :status => "Product",
-    :project_id => "1",
-    :sprint_id => "1"
+    :project_id => "2",
+    :sprint_id => "3"
   }])
 
 tasks = Task.create([
@@ -190,14 +190,54 @@ tasks = Task.create([
         status: 'in-progress'
     },
     {
-        title: 'Fifth task',
+        title: 'Fourth task',
         description: 'task for 2 story',
         story_id: 2,        
         status: 'done'
     },
     {
-        title: 'Sixth task',
+        title: 'Fifth task',
         description: 'task for 3 story',
         story_id: 3,       
-        status: 'in-progress'  
+        status: 'in-progress'
+    },
+    {
+        title: 'Sixth task',
+        description: 'task for 4 story',
+        story_id: 4,        
+        status: 'done'
+    },
+    {
+        title: 'Seventh task',
+        description: 'task for 4 story',
+        story_id: 4,        
+        status: 'done'
     }])
+
+sprints = Sprint.create([    
+    {
+        title: 'First sprint',
+        description: 'sprint1 for project1',
+        project_id: 1,        
+        status: 'active',
+        start: '10.10.2013',
+        finish: '24.10.2013'
+    },
+    {
+        title: 'Second sprint',
+        description: 'sprint2 for project1',
+        project_id: 1,        
+        status: 'unactive',
+        start: '24.10.2013',
+        finish: '12.11.2013'
+    },
+    {
+        title: 'First sprint',
+        description: 'sprint1 for project2',
+        project_id: 2,        
+        status: 'active',
+        start: '3.03.2014',
+        finish: '15.03.2014'
+    }])
+
+
