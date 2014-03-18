@@ -5,6 +5,8 @@ SSTaskTracker::Application.routes.draw do
 
   devise_for :users
 
+  get 'projects/info/:id' => 'projects#get_project_info'
+  
   get 'tasks/for-project/:id' => 'tasks#get_tasks'
     
   get "projects/for-user/:id" => "projects#get_projects"
@@ -31,11 +33,10 @@ SSTaskTracker::Application.routes.draw do
 
   resources :team_members
 
-  get '/:params' => 'app#main'
-
+  get ':params(/:tmp(/:tmp))' => 'app#main'
 
   get "app/main"
-    
+
   root 'app#main'
 
   
