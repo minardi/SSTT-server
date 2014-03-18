@@ -6,7 +6,7 @@ SSTaskTracker::Application.routes.draw do
   devise_for :users
 
   get 'tasks/for-project/:id' => 'tasks#get_tasks'
-   
+    
   get "projects/for-user/:id" => "projects#get_projects"
 
   get "stories/for-project/:id" => "stories#index" 
@@ -17,9 +17,7 @@ SSTaskTracker::Application.routes.draw do
 
   get "teams/for-project/:id" => "teams#get_teams"
 
-  get 'users/for-team/:id' => 'team_members#get_team_members', as: :team_member
-
-  get ':params' => 'app#main'
+  get 'users/for-team/:id' => 'team_members#get_team_members', as: :team_member  
    
   resources :projects
 
@@ -32,6 +30,9 @@ SSTaskTracker::Application.routes.draw do
   resources :sprints
 
   resources :team_members
+
+  get '/:params' => 'app#main'
+
 
   get "app/main"
     
