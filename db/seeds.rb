@@ -36,7 +36,7 @@ projects = Project.create([
         start: '10.02.14',
         finish: '10.03.14',
         owner: 'B',
-        pm: '1'
+        pm: '4'
     }])
 
 users = User.create([
@@ -135,7 +135,7 @@ team_member = TeamMember.create([
         role: 'developer'
     },
     {
-        user_id: 3,
+        user_id: 4,
         team_id: 5,
         role: 'developer'   
     }])
