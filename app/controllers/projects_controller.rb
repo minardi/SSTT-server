@@ -66,6 +66,33 @@ class ProjectsController < ApplicationController
 
       @proj = []
       @projects = @user.team_members.each do |team_member| 
+      if team_member.role != 'null'
+        @proj_id = team_member.team.project_id
+        @project = Project.find(params[:id] = @proj_id)
+                  
+        @project_new = {
+          :id =>  @project.id,
+          :title => @project.title,
+          :description => @project.description,
+          :owner => @project.owner,
+          :start => @project.start,
+          :finish => @project.finish,
+          :role => team_member.role,
+          :pm => { 
+            :user_id => @project.pm,
+            :first_name => User.where(["id = ?", @project.pm]).first.first_name,
+            :last_name => User.where(["id == ?",@project.pm]).first.last_name
+          }
+        }
+        @proj.push(@project_new)
+      end
+    end
+  end
+
+  def get_project_info
+      @user = User.find(params[:id])
+
+      @projects = @user.team_members.each do |team_member| 
        if team_member.role != 'null'
           @proj_id = team_member.team.project_id
           @project = Project.find(params[:id] = @proj_id)
@@ -84,7 +111,7 @@ class ProjectsController < ApplicationController
               :last_name => User.where(["id == ?",@project.pm]).first.last_name
             }
           }
-          @proj.push(@project_new)
+          return @project_new
         end
       end
   end

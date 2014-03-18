@@ -61,16 +61,18 @@ class TasksController < ApplicationController
     end
   end
 
-   def get_tasks
+  def get_tasks
     @project = Project.find(params[:id])              
       
       @array_of_tasks = []
             
-      @story = @project.stories.each do |storyitem|
+      @story = @project.sprints.each do |sprintitem|
         
-        if storyitem.status == 'Sprint'
-          storyitem.tasks.each do |taskitem|
-            @array_of_tasks.push(taskitem)
+        if sprintitem.status == 'active'
+          sprintitem.stories.each do |storyitem|
+            storyitem.tasks.each do |taskitem|
+              @array_of_tasks.push(taskitem)
+            end
           end
         end                
       end   
