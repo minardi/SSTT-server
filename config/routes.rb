@@ -33,8 +33,8 @@ SSTaskTracker::Application.routes.draw do
 
   resources :team_members
 
-  get ':params(/:tmp(/:tmp))' => 'app#main'
-
+  get '/:params' => 'app#main'
+    
   get "app/main"
 
   root 'app#main'
