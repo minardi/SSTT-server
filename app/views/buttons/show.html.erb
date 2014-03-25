@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @button.content %>
+</p>
+
+<p>
+  <strong>Glyph:</strong>
+  <%= @button.glyph %>
+</p>
+
+<p>
+  <strong>Permittion:</strong>
+  <%= @button.permittion %>
+</p>
+
+<%= link_to 'Edit', edit_button_path(@button) %> |
+<%= link_to 'Back', buttons_path %>
