@@ -1,0 +1,31 @@
+<h1>Listing buttons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Glyph</th>
+      <th>Permittion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buttons.each do |button| %>
+      <tr>
+        <td><%= button.content %></td>
+        <td><%= button.glyph %></td>
+        <td><%= button.permittion %></td>
+        <td><%= link_to 'Show', button %></td>
+        <td><%= link_to 'Edit', edit_button_path(button) %></td>
+        <td><%= link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Button', new_button_path %>
