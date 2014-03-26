@@ -3,7 +3,8 @@ class CreateButtons < ActiveRecord::Migration
     create_table :buttons do |t|
       t.string :content
       t.string :glyph
-      t.string :permittion
+      t.string :must
+      t.string :must_not
 
       t.timestamps
     end

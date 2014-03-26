@@ -2,6 +2,8 @@ SSTaskTracker::Application.routes.draw do
 
   resources :buttons
 
+  resources :permissions
+
   get '/users/sign_up', to: redirect('/users/sign_in')
 
   devise_for :users
