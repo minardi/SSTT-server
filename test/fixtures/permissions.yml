@@ -2,12 +2,10 @@
 
 one:
   content: MyString
-  glyph: MyString
-  must: MyString
-  must_not: MyString
+  page: MyString
+  right: MyString
 
 two:
   content: MyString
-  glyph: MyString
-  must: MyString
-  must_not: MyString
+  page: MyString
+  right: MyString
