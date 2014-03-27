@@ -3,11 +3,11 @@
 one:
   content: MyString
   glyph: MyString
-  must: MyString
-  must_not: MyString
+  show_only: MyString
+  show_except: MyString
 
 two:
   content: MyString
   glyph: MyString
-  must: MyString
-  must_not: MyString
+  show_only: MyString
+  show_except: MyString

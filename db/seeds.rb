@@ -244,67 +244,67 @@ buttons = Button.create([
     {
         content: 'Back',
         glyph: 'btn btn-info glyphicon glyphicon-arrow-left',
-        must: '',
-        must_not: 'page'
+        show_only: '',
+        show_except: 'page'
     },
     {
         content: 'BackFromTeamEditPage',
         glyph: 'btn btn-info glyphicon glyphicon-arrow-left',
-        must: 'page',
-        must_not: ''
+        show_only: 'page',
+        show_except: ''
     },
     {
         content: 'Team',
         glyph: 'btn btn-info glyphicon icon-team',
-        must: 'right',
-        must_not: 'page'
+        show_only: 'right',
+        show_except: 'page'
     },
     {
         content: 'Config',
         glyph: 'btn btn-info glyphicon glyphicon-cog',
-        must: 'right',
-        must_not: ''
+        show_only: 'right',
+        show_except: ''
     },
     {
         content: 'Delete',
         glyph: 'btn btn-info glyphicon glyphicon-remove',
-        must: 'right',
-        must_not: ''
+        show_only: 'right',
+        show_except: ''
     }])
     
 permissions = Permission.create([
     {
-        content: 'Back',
+        button_id: 1,
         page: 'project_page',
         right: ''
     },
     {
-        content: 'Back',
+        button_id: 1,
         page: 'team_edit_page',
         right: ''
     },
     {
-        content: 'BackFromTeamEditPage',
+        button_id: 2,
         page: 'team_edit_page',
         right: ''
     },
     {
-        content: 'Team',
+        button_id: 3,
+        page: 'team_edit_page',
+        right: 'pm'
+    },
+   {
+        button_id: 3,
         page: 'team_page',
         right: 'pm'
     },
-    {
-        content: 'Team',
-        page: 'team_edit_page',
-        right: 'pm'
-    },
-    {
-        content: 'Configure',
+   {
+        button_id: 4,
         page: '',
         right: 'pm'
     },
     {
-        content: 'Delete',
+        button_id: 5,
         page: '',
         right: 'pm'
     }])

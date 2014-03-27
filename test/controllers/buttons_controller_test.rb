@@ -18,7 +18,7 @@ class ButtonsControllerTest < ActionController::TestCase
 
   test "should create button" do
     assert_difference('Button.count') do
-      post :create, button: { content: @button.content, glyph: @button.glyph, must: @button.must, must_not: @button.must_not }
+      post :create, button: { content: @button.content, glyph: @button.glyph, show_except: @button.show_except, show_only: @button.show_only }
     end
 
     assert_redirected_to button_path(assigns(:button))
@@ -35,7 +35,7 @@ class ButtonsControllerTest < ActionController::TestCase
   end
 
   test "should update button" do
-    patch :update, id: @button, button: { content: @button.content, glyph: @button.glyph, must: @button.must, must_not: @button.must_not }
+    patch :update, id: @button, button: { content: @button.content, glyph: @button.glyph, show_except: @button.show_except, show_only: @button.show_only }
     assert_redirected_to button_path(assigns(:button))
   end
 

@@ -1,8 +1,8 @@
 SSTaskTracker::Application.routes.draw do
 
-  resources :buttons
-
   resources :permissions
+
+  resources :buttons
 
   get '/users/sign_up', to: redirect('/users/sign_in')
 

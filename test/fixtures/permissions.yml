@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyString
+  button_id: 1
   page: MyString
   right: MyString
 
 two:
-  content: MyString
+  button_id: 1
   page: MyString
   right: MyString

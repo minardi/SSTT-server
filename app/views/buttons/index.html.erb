@@ -5,8 +5,8 @@
     <tr>
       <th>Content</th>
       <th>Glyph</th>
-      <th>Must</th>
-      <th>Must not</th>
+      <th>Show only</th>
+      <th>Show except</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,8 +18,8 @@
       <tr>
         <td><%= button.content %></td>
         <td><%= button.glyph %></td>
-        <td><%= button.must %></td>
-        <td><%= button.must_not %></td>
+        <td><%= button.show_only %></td>
+        <td><%= button.show_except %></td>
         <td><%= link_to 'Show', button %></td>
         <td><%= link_to 'Edit', edit_button_path(button) %></td>
         <td><%= link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure?' } %></td>
