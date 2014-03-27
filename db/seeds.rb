@@ -243,33 +243,33 @@ sprints = Sprint.create([
 buttons = Button.create([
     {
         content: 'Back',
-        glyph: 'btn btn-info glyphicon glyphicon-arrow-left', 
-        must: '',
-        must_not: 'page'
+        glyph: 'btn btn-info glyphicon glyphicon-arrow-left',
+        show_only: '',
+        show_except: 'page'
     },
     {
         content: 'BackFromTeamEditPage',
         glyph: 'btn btn-info glyphicon glyphicon-arrow-left',
-        must: 'page',
-        must_not: ''
+        show_only: 'page',
+        show_except: ''
     },
     {
         content: 'Team',
         glyph: 'btn btn-info glyphicon icon-team',
-        must: 'right',
-        must_not: 'page'
+        show_only: 'right',
+        show_except: 'page'
     },
     {
         content: 'Config',
         glyph: 'btn btn-info glyphicon glyphicon-cog',
-        must: 'right',
-        must_not: ''
+        show_only: 'right',
+        show_except: ''
     },
     {
         content: 'Delete',
         glyph: 'btn btn-info glyphicon glyphicon-remove',
-        must: 'right',
-        must_not: ''
+        show_only: 'right',
+        show_except: ''
     }])
     
 permissions = Permission.create([
@@ -290,15 +290,15 @@ permissions = Permission.create([
     },
     {
         button_id: 3,
-        page: 'team_page',
-        right: 'pm'
-    },
-    {
-        button_id: 3,
         page: 'team_edit_page',
         right: 'pm'
     },
-    {
+   {
+        button_id: 3,
+        page: 'team_page',
+        right: 'pm'
+    },
+   {
         button_id: 4,
         page: '',
         right: 'pm'

@@ -1,1 +1,1 @@
-json.extract! @button, :id, :content, :glyph, :must, :must_not, :created_at, :updated_at
+json.extract! @button, :id, :content, :glyph, :show_only, :show_except, :created_at, :updated_at

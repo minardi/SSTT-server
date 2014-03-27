@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Content</th>
+      <th>Button</th>
       <th>Page</th>
       <th>Right</th>
       <th></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @permissions.each do |permission| %>
       <tr>
-        <td><%= permission.content %></td>
+        <td><%= permission.button_id %></td>
         <td><%= permission.page %></td>
         <td><%= permission.right %></td>
         <td><%= link_to 'Show', permission %></td>

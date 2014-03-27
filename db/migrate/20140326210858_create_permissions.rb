@@ -1,7 +1,7 @@
 class CreatePermissions < ActiveRecord::Migration
   def change
     create_table :permissions do |t|
-      t.string :content
+      t.integer :button_id
       t.string :page
       t.string :right
 
