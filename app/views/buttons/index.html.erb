@@ -23,6 +23,11 @@
         <td><%= link_to 'Show', button %></td>
         <td><%= link_to 'Edit', edit_button_path(button) %></td>
         <td><%= link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% button.permissions.each do |p| %>
+            <%= p.id %>
+            <%= p.page %>
+        </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
